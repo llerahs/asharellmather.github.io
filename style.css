@@ -436,45 +436,61 @@ a{color:inherit}
   .cursor-dot{ display:none; }
 }
 
-/* MOBILE NAV FIX */
-@media (max-width: 700px){
-  .nav{
-    padding: 10px 12px;
-    gap: 8px;
-  }
+/* HAMBURGER */
+.nav__toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
 
-  .nav__brand{
-    padding: 0;
-  }
+.nav__toggle span{
+  width:24px;
+  height:2px;
+  background:#ff9f43;
+  border-radius:2px;
+  transition:0.3s;
+}
 
-  .nav__logo{
-    height: 40px;   /* bigger but not huge */
-    max-width: 140px;
-  }
+/* MOBILE MENU */
+.mobileMenu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:100%;
+  height:100vh;
+  background:rgba(0,0,0,0.95);
+  backdrop-filter:blur(10px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  transition:right 0.3s ease;
+  z-index:999;
+}
 
-  .nav__links{
-    flex-wrap: nowrap;             /* stop stacking */
-    overflow-x: auto;              /* allow swipe */
-    -webkit-overflow-scrolling: touch;
-    gap: 6px;
-    max-width: 55vw;               /* prevents taking over the whole pill */
-    padding: 2px 4px;
-  }
+.mobileMenu a{
+  color:#fff;
+  font-size:1.4rem;
+  text-decoration:none;
+}
 
-  .nav__links::-webkit-scrollbar{
+/* ACTIVE STATE */
+.mobileMenu.active{
+  right:0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  .nav__links--desktop{
     display:none;
   }
 
-  .nav__link{
-    white-space: nowrap;           /* keep each link on one line */
-    font-size: 0.85rem;
-    padding: 8px 10px;
-  }
-
-  .nav__cta{
-    padding: 8px 10px;
-    font-size: 0.85rem;
-    white-space: nowrap;
+  .nav__toggle{
+    display:flex;
   }
 }
 
