@@ -63,9 +63,27 @@ a{color:inherit}
   box-shadow:0 14px 40px rgba(0,0,0,.35);
 }
 
-.nav__brand{display:flex; align-items:center; gap:10px; text-decoration:none}
-.nav__logo--big{width:400px;height:100px; object-fit:contain; border-radius:14px}
-.nav__brandText{font-weight:750; letter-spacing:.2px}
+.nav__brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 4px 10px; /* reduces side push */
+}
+
+.nav__logo{
+  height: 48px;        /* controls visual size */
+  width: auto;         /* keeps proportions */
+  max-width: 160px;    /* prevents overflow */
+  object-fit: contain;
+}
+
+@media (min-width: 900px){
+  .nav__logo{
+    height: 56px;
+    max-width: 200px;
+  }
+}
+
 
 .nav__links{
   display:flex;
