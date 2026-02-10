@@ -37,7 +37,7 @@ a{color:inherit}
   position:fixed;
   inset:10px;
   border-radius:22px;
-  pointer-events:none;
+  pointer-events:none !important;
   border:3px solid transparent;
   background:
     linear-gradient(var(--bg),var(--bg)) padding-box,
