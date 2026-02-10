@@ -436,3 +436,45 @@ a{color:inherit}
   .cursor-dot{ display:none; }
 }
 
+/* MOBILE NAV FIX */
+@media (max-width: 700px){
+  .nav{
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .nav__brand{
+    padding: 0;
+  }
+
+  .nav__logo{
+    height: 40px;   /* bigger but not huge */
+    max-width: 140px;
+  }
+
+  .nav__links{
+    flex-wrap: nowrap;             /* stop stacking */
+    overflow-x: auto;              /* allow swipe */
+    -webkit-overflow-scrolling: touch;
+    gap: 6px;
+    max-width: 55vw;               /* prevents taking over the whole pill */
+    padding: 2px 4px;
+  }
+
+  .nav__links::-webkit-scrollbar{
+    display:none;
+  }
+
+  .nav__link{
+    white-space: nowrap;           /* keep each link on one line */
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .nav__cta{
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+
