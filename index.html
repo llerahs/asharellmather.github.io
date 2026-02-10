@@ -1,51 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A. Sharell Mather — Web & UX Designer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A. Sharell Mather — Web Developer & UX/UI Designer</title>
+  <meta name="description" content="A. Sharell Mather — Web Developer • UX/UI Designer • UX Research (11 years). Building human-centered, conversion-focused digital experiences." />
+
+  <!-- Favicon (recommended) -->
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <!-- Optional: Apple icon -->
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- Glow cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
 
-<header class="hero">
-  <h1>A. Sharell Mather</h1>
-  <p>Web Designer • Web Developer • UX Designer</p>
-  <p class="tagline">
-    I design and build digital experiences that feel effortless, intuitive, and human-centered.
-  </p>
-  <a href="#projects" class="btn">View Work</a>
-</header>
+  <!-- Top gradient border frame (like the inspiration) -->
+  <div class="frame"></div>
 
-<section id="projects">
-  <h2>Featured Projects</h2>
+  <header class="top">
+    <div class="container">
+      <nav class="nav">
+        <a class="nav__brand" href="#home" aria-label="Home">
+          <img src="assets/logo.png" alt="Logo" class="nav__logo" />
+          <span class="nav__brandText">A. Sharell</span>
+        </a>
 
-  <div class="project">
-    <h3>STEMlingo</h3>
-    <p>Website redesign & subscription flow optimization for an education platform.</p>
-    <p><strong>Role:</strong> Lead Web Designer • Web Developer • UX Designer</p>
-    <p class="stack">
-      <strong>Tech:</strong> Shopify, Liquid, HTML, CSS, JavaScript, Figma
-    </p>
-  </div>
-</section>
+        <div class="nav__links">
+          <a href="#home" class="nav__link is-active">Home</a>
+          <a href="#about" class="nav__link">About</a>
+          <a href="#services" class="nav__link">Service</a>
+          <a href="assets/resume.pdf" class="nav__link" target="_blank" rel="noreferrer">Resume</a>
+          <a href="#projects" class="nav__link">Project</a>
+          <a href="#contact" class="nav__link">Contact</a>
+        </div>
 
-<section id="pdf">
-  <h2>Download Portfolio</h2>
-  <a href="assets/portfolio.pdf" class="btn" download>
-    Download PDF Portfolio
-  </a>
-</section>
+        <a class="nav__cta" href="#projects">Portfolio ↗</a>
+      </nav>
+    </div>
+  </header>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: hello@pixocodetech.com</p>
-  <p>Based in The Bahamas — available worldwide</p>
-</section>
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="container hero__grid">
+      <div class="hero__left">
+        <div class="pill">
+          <span class="pill__dot"></span>
+          <span>Hello!</span>
+        </div>
 
-<footer>
-  <p>© 2026 A. Sharell Mather</p>
-</footer>
+        <h1 class="hero__title">
+          I’m <span class="accent">A. Sharell</span>,<br />
+          <span class="hero__subtitle">Web Developer</span>
+        </h1>
+
+        <p class="hero__desc">
+          Web Developer • UX/UI Design • UX Research — building modern, human-centered experiences that convert.
+        </p>
+
+        <div class="hero__buttons">
+          <a class="btn btn--primary" href="#projects">Portfolio ↗</a>
+          <a class="btn btn--ghost" href="#contact">Hire me</a>
+        </div>
+
+        <div class="hero__mini">
+          <div class="quote">
+            <div class="quote__mark">“</div>
+            <p class="quote__text">
+              Sharell’s design + development work creates clarity, trust, and polished user experiences.
+            </p>
+          </div>
+
+          <div class="xp">
+            <div class="xp__stars" aria-hidden="true">★★★★★</div>
+            <div class="xp__num">11 Years</div>
+            <div class="xp__label">Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="portrait">
+          <div class="portrait__circle" aria-hidden="true"></div>
+          <!-- Replace with your photo -->
+          <img src="assets/headshot.png" alt="A. Sharell Mather portrait" class="portrait__img" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SERVICES -->
+  <section id="services" class="section section--dark">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">My <span class="accent">Services</span></h2>
+        <p class="section__desc">
+          End-to-end support from strategy to design to development — with UX decisions that translate into real results.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Web Development</h3>
+          <p>Responsive builds, performance, SEO fundamentals, and maintainable front-end implementation.</p>
+          <div class="card__tagrow">
+            <span class="tag">HTML/CSS/JS</span>
+            <span class="tag">Shopify/Liquid</span>
+            <span class="tag">Accessibility</span>
+          </div>
+          <a class="card__arrow" href="#projects" aria-label="View projects">↗</a>
+        </article>
+
+        <article class="card">
+          <h3>UX/UI Design</h3>
+          <p>Clean, modern UI systems with strong hierarchy, flows, and brand-aligned visual direction.</p>
+          <div class="card__tagrow">
+            <span class="tag">Figma</span>
+            <span class="tag">Design Systems</span>
+            <span class="tag">Prototyping</span>
+          </div>
+          <a class="card__arrow" href="#projects" aria-label="View projects">↗</a>
+        </article>
+
+        <article class="card">
+          <h3>UX Research</h3>
+          <p>Practical research to reduce friction: audits, interviews, usability testing, and insight-driven recommendations.</p>
+          <div class="card__tagrow">
+            <span class="tag">Heuristics</span>
+            <span class="tag">User Flows</span>
+            <span class="tag">Testing</span>
+          </div>
+          <a class="card__arrow" href="#projects" aria-label="View projects">↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container about">
+      <div class="about__media">
+        <div class="portrait portrait--left">
+          <div class="portrait__circle portrait__circle--left" aria-hidden="true"></div>
+          <!-- Replace with your about photo -->
+          <img src="assets/about.png" alt="A. Sharell Mather" class="portrait__img" />
+        </div>
+      </div>
+
+      <div class="about__content">
+        <h2 class="section__title">About <span class="accent">Me</span></h2>
+        <p class="section__desc">
+          I’m a multidisciplinary Web Developer and UX/UI Designer with 11 years of experience building intuitive,
+          conversion-focused websites and user-centered digital products.
+        </p>
+        <p class="section__desc">
+          My background in Sociology strengthens my approach to UX research — understanding user behavior, motivations,
+          and barriers, then translating those insights into clear design decisions and scalable builds.
+        </p>
+
+        <div class="about__bullets">
+          <div class="bullet">✅ UX + Dev bridge (design that ships)</div>
+          <div class="bullet">✅ Strong hierarchy & conversion-minded IA</div>
+          <div class="bullet">✅ Mobile-first, accessible, and clean UI</div>
+        </div>
+
+        <div class="about__actions">
+          <a class="btn btn--primary" href="assets/resume.pdf" target="_blank" rel="noreferrer">Open Resume PDF</a>
+          <a class="btn btn--ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section section--soft">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Featured <span class="accent">Project</span></h2>
+        <p class="section__desc">Here’s one highlighted case with the details that matter to clients and recruiters.</p>
+      </div>
+
+      <article class="project">
+        <div class="project__media">
+          <!-- Optional preview image -->
+          <img src="assets/stemlingo.jpg" alt="STEMlingo website preview" onerror="this.style.display='none'" />
+        </div>
+
+        <div class="project__content">
+          <h3 class="project__title">STEMlingo</h3>
+          <p class="project__meta">Website redesign & subscription flow optimization</p>
+
+          <div class="project__grid">
+            <div>
+              <div class="project__label">Role</div>
+              <div class="project__value">Lead Web Designer • Web Developer • UX Designer</div>
+            </div>
+            <div>
+              <div class="project__label">Tech Stack</div>
+              <div class="project__value">Shopify • Liquid • HTML • CSS • JavaScript • Figma</div>
+            </div>
+            <div>
+              <div class="project__label">What I improved</div>
+              <div class="project__value">
+                Clearer value in first seconds, simplified navigation, and a more intuitive subscription decision flow.
+              </div>
+            </div>
+            <div>
+              <div class="project__label">Outcome</div>
+              <div class="project__value">
+                A modern, trust-building UI with structured content patterns and scalable custom sections.
+              </div>
+            </div>
+          </div>
+
+          <div class="project__actions">
+            <a class="btn btn--primary" href="https://stemlingo.com" target="_blank" rel="noreferrer">View Live ↗</a>
+            <!-- If you want your PDF portfolio to open instead of download, remove download attribute -->
+            <a class="btn btn--ghost" href="assets/portfolio.pdf" target="_blank" rel="noreferrer">Open Portfolio PDF</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact" class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__name">A. Sharell Mather</div>
+        <div class="footer__role">Web Developer • UX/UI Design • UX Research</div>
+      </div>
+
+      <div class="footer__contact">
+        <div><span class="footer__label">Email</span> <a href="mailto:hello@pixocodetech.com">hello@pixocodetech.com</a></div>
+        <div><span class="footer__label">Phone</span> <a href="tel:+12428221984">242-822-1984</a></div>
+        <div><span class="footer__label">Location</span> Based in The Bahamas — available worldwide</div>
+      </div>
+
+      <div class="footer__links">
+        <!-- Add your real links -->
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      © <span id="year"></span> A. Sharell Mather
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
 
 </body>
 </html>
