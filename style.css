@@ -494,3 +494,12 @@ a{color:inherit}
   }
 }
 
+.nav__toggle{
+  position: relative;
+  z-index: 10001;
+  pointer-events: auto;
+}
+
+.mobileMenu{
+  z-index: 10000;
+}
