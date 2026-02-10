@@ -24,3 +24,17 @@ const dot = document.querySelector(".cursor-dot");
 window.addEventListener("mousemove", (e) => {
   dot.style.transform = `translate(${e.clientX - 5}px, ${e.clientY - 5}px)`;
 });
+
+const toggle = document.querySelector('.nav__toggle');
+const mobileMenu = document.querySelector('.mobileMenu');
+
+toggle.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+  });
+});
