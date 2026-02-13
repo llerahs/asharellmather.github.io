@@ -17,15 +17,15 @@
   <!-- Glow cursor -->
   <div class="cursor-dot" aria-hidden="true"></div>
 
-  <!-- Top gradient border frame -->
+  <!-- Gradient border frame -->
   <div class="frame"></div>
 
   <header class="top">
     <div class="container">
 
-      <!-- NAV: logo centered (matches reference layout). Mobile behavior unchanged from your old setup -->
+      <!-- NAV (logo centered on desktop; mobile behavior unchanged) -->
       <nav class="nav nav--centerLogo">
-        <!-- Left side links -->
+        <!-- Left -->
         <div class="nav__group nav__group--left nav__links nav__links--desktop">
           <a href="#home" class="nav__link active">Home</a>
           <a href="#about" class="nav__link">About</a>
@@ -37,14 +37,14 @@
           <img src="assets/logo.png" alt="A. Sharell logo" class="nav__logo" />
         </a>
 
-        <!-- Right side links -->
+        <!-- Right -->
         <div class="nav__group nav__group--right nav__links nav__links--desktop">
           <a href="assets/resume.pdf" class="nav__link" target="_blank" rel="noreferrer">Resume</a>
           <a href="#projects" class="nav__link">Project</a>
           <a href="#contact" class="nav__link">Contact</a>
         </div>
 
-        <!-- Hamburger (leave as-is; your existing JS/CSS can keep handling it) -->
+        <!-- Hamburger -->
         <button class="nav__toggle" aria-label="Open menu">
           <span></span>
           <span></span>
@@ -52,7 +52,7 @@
         </button>
       </nav>
 
-      <!-- Mobile menu (unchanged) -->
+      <!-- Mobile menu -->
       <div class="mobileMenu">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -65,50 +65,53 @@
     </div>
   </header>
 
-  <!-- HERO: white background + reference-style layout -->
-  <main id="home" class="hero hero--light">
-    <div class="container hero__grid hero__grid--light">
+  <!-- HERO (Jenny-style: content sides + photo centered, white background, frame over hero) -->
+  <main id="home" class="hero hero--light hero--jenny">
+    <div class="container hero__jennyGrid">
 
-      <div class="hero__left hero__left--light">
-        <div class="pill pill--light">
+      <!-- LEFT SIDE -->
+      <div class="hero__side hero__side--left">
+        <div class="quote quote--light hero__sideCard">
+          <div class="quote__mark">“</div>
+          <p class="quote__text">
+            Sharell’s design + development work creates clarity, trust, and polished user experiences.
+          </p>
+        </div>
+      </div>
+
+      <!-- CENTER -->
+      <div class="hero__center">
+        <div class="pill pill--light hero__hello">
           <span class="pill__dot"></span>
           <span>Hello!</span>
         </div>
 
-        <h1 class="hero__title hero__title--light">
+        <h1 class="hero__title hero__title--light hero__title--center">
           I’m <span class="accent">A. Sharell</span>,<br />
           <span class="hero__subtitle hero__subtitle--light">Web Developer</span>
         </h1>
 
-        <p class="hero__desc hero__desc--light">
+        <p class="hero__desc hero__desc--light hero__desc--center">
           Web Developer • UX/UI Design • UX Research — building modern, human-centered experiences that convert.
         </p>
 
-        <div class="hero__buttons">
+        <div class="hero__buttons hero__buttons--center">
           <a class="btn btn--primary" href="#projects">Portfolio ↗</a>
           <a class="btn btn--ghost btn--ghostLight" href="#contact">Hire me</a>
         </div>
 
-        <div class="hero__mini hero__mini--light">
-          <div class="quote quote--light">
-            <div class="quote__mark">“</div>
-            <p class="quote__text">
-              Sharell’s design + development work creates clarity, trust, and polished user experiences.
-            </p>
-          </div>
-
-          <div class="xp xp--light">
-            <div class="xp__stars" aria-hidden="true">★★★★★</div>
-            <div class="xp__num">11 Years</div>
-            <div class="xp__label">Experience</div>
-          </div>
+        <div class="hero__photoWrap">
+          <div class="hero__photoCircle" aria-hidden="true"></div>
+          <img src="assets/headshot.png" alt="A. Sharell Mather portrait" class="hero__photo" />
         </div>
       </div>
 
-      <div class="hero__right hero__right--light">
-        <div class="portrait portrait--light">
-          <div class="portrait__circle portrait__circle--light" aria-hidden="true"></div>
-          <img src="assets/headshot.png" alt="A. Sharell Mather portrait" class="portrait__img" />
+      <!-- RIGHT SIDE -->
+      <div class="hero__side hero__side--right">
+        <div class="xp xp--light hero__sideCard">
+          <div class="xp__stars" aria-hidden="true">★★★★★</div>
+          <div class="xp__num">11 Years</div>
+          <div class="xp__label">Experience</div>
         </div>
       </div>
 
@@ -278,4 +281,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
