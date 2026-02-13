@@ -44,12 +44,18 @@ a{color:inherit}
   inset:10px;
   border-radius:22px;
   pointer-events:none !important;
-  border:3px solid transparent;
-  background:
-    linear-gradient(var(--bg),var(--bg)) padding-box,
-    linear-gradient(90deg,#6ef 0%, #7a5cff 35%, #ff8a2a 70%, #7aff7a 100%) border-box;
-  opacity:.85;
   z-index:9998;
+
+  /* BORDER ONLY */
+  border:3px solid transparent;
+  background: linear-gradient(90deg,#6ef 0%, #7a5cff 35%, #ff8a2a 70%, #7aff7a 100%) border-box;
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  opacity:.95;
 }
 
 /* Header area behind nav should be LIGHT so it doesn't look black */
