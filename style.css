@@ -352,7 +352,7 @@ a{color:inherit}
 }
 
 /* =========================
-   SERVICES (Accordion layout — DARK)
+   SERVICES (Accordion layout — DARK) [UPDATED: arrows + split CTA]
    ========================= */
 
 .services__grid{
@@ -425,6 +425,7 @@ a{color:inherit}
   color: rgba(255,255,255,.92);
 }
 
+/* ICON: circle + arrow (NO images needed) */
 .svcItem__icon{
   width: 34px;
   height: 34px;
@@ -433,9 +434,16 @@ a{color:inherit}
   place-items:center;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
-  font-size: 18px;
-  line-height: 1;
-  color: rgba(255,255,255,.75);
+  transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+
+.svcItem__icon .arrow{
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  transition: transform .25s ease, border-color .2s ease;
 }
 
 /* Open row */
@@ -446,8 +454,12 @@ a{color:inherit}
 
 .svcItem.is-open .svcItem__icon{
   background: linear-gradient(180deg, var(--orange), var(--orange2));
-  color: #151014;
   border-color: transparent;
+}
+
+.svcItem.is-open .svcItem__icon .arrow{
+  border-color: #151014;
+  transform: rotate(-135deg);
 }
 
 /* Expanded panel */
@@ -507,18 +519,45 @@ a{color:inherit}
   opacity: .92;
 }
 
-/* CTA */
+/* CTA — EXACT split button style (orange pill + black circle) */
 .services__cta{
   align-self:center;
-  margin-top: 6px;
-  width: fit-content;
+  margin-top: 12px;
+  display:inline-flex;
+  align-items:center;
   text-decoration:none;
-  font-weight: 850;
-  padding: 12px 16px;
   border-radius: 999px;
+  overflow:hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transition: transform .15s ease;
+}
+
+.services__cta:hover{
+  transform: translateY(-2px);
+}
+
+.services__cta-text{
   background: linear-gradient(180deg, var(--orange), var(--orange2));
   color: #151014;
-  box-shadow: 0 18px 46px rgba(0,0,0,.35);
+  padding: 12px 20px;
+  font-weight: 850;
+  font-size: .95rem;
+}
+
+.services__cta-circle{
+  width: 48px;
+  height: 48px;
+  background: #000;
+  display:grid;
+  place-items:center;
+}
+
+.services__cta-arrow{
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: rotate(45deg);
 }
 
 /* Responsive */
