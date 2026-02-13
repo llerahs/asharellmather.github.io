@@ -119,54 +119,137 @@
   </main>
 
   <!-- SERVICES -->
-  <section id="services" class="section section--dark">
-    <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">My <span class="accent">Services</span></h2>
-        <p class="section__desc">
-          End-to-end support from strategy to design to development — with UX decisions that translate into real results.
-        </p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Web Development</h3>
-          <p>Responsive builds, performance, SEO fundamentals, and maintainable front-end implementation.</p>
-          <div class="card__tagrow">
-            <span class="tag">HTML/CSS/JS</span>
-            <span class="tag">React</span>
-            <span class="tag">Shopify/Liquid</span>
-            <span class="tag">Git/GitHub</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Accessibility</span>
-          </div>
-          <a class="card__arrow" href="#projects" aria-label="View projects">↗</a>
-        </article>
-
-        <article class="card">
-          <h3>UX/UI Design</h3>
-          <p>Clean, modern UI systems with strong hierarchy, flows, and brand-aligned visual direction.</p>
-          <div class="card__tagrow">
-            <span class="tag">Figma</span>
-            <span class="tag">Design Systems</span>
-            <span class="tag">Prototyping</span>
-          </div>
-          <a class="card__arrow" href="#projects" aria-label="View projects">↗</a>
-        </article>
-
-        <article class="card">
-          <h3>UX Research</h3>
-          <p>Practical research to reduce friction: audits, interviews, usability testing, and insight-driven recommendations.</p>
-          <div class="card__tagrow">
-            <span class="tag">Heuristics</span>
-            <span class="tag">User Flows</span>
-            <span class="tag">Testing</span>
-          </div>
-          <a class="card__arrow" href="#projects" aria-label="View projects">↗</a>
-        </article>
-      </div>
+<section id="services" class="section section--dark services">
+  <div class="container services__grid">
+    <!-- Left heading -->
+    <div class="services__head">
+      <div class="services__kicker">— My Specialization</div>
+      <h2 class="services__title">
+        <span class="accent">Services</span> I Provide
+      </h2>
     </div>
-  </section>
+
+    <!-- Right description -->
+    <div class="services__intro">
+      <p>
+        End-to-end support from strategy to design to development — with UX decisions that translate into real results.
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="services__accordion" data-accordion>
+      <!-- 01 -->
+      <button class="svcItem is-open" type="button" aria-expanded="true">
+        <span class="svcItem__num">01.</span>
+        <span class="svcItem__label">Web Development</span>
+        <span class="svcItem__icon" aria-hidden="true">×</span>
+      </button>
+      <div class="svcPanel is-open">
+        <div class="svcPanel__inner">
+          <div class="svcPanel__tags">
+            <span class="svcTag">React</span>
+            <span class="svcTag">JavaScript</span>
+            <span class="svcTag">HTML/CSS</span>
+            <span class="svcTag">Shopify / Liquid</span>
+            <span class="svcTag">REST APIs</span>
+            <span class="svcTag">Accessibility</span>
+          </div>
+
+          <p class="svcPanel__text">
+            Responsive, performant builds with clean UI, solid structure, and conversion-focused implementation.
+            Maintainable components, fast shipping, and scalable patterns.
+          </p>
+
+          <div class="svcPanel__media">
+            <img src="assets/services-dev.jpg" alt="Web development preview" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <button class="svcItem" type="button" aria-expanded="false">
+        <span class="svcItem__num">02.</span>
+        <span class="svcItem__label">UX/UI Design</span>
+        <span class="svcItem__icon" aria-hidden="true">×</span>
+      </button>
+      <div class="svcPanel">
+        <div class="svcPanel__inner">
+          <div class="svcPanel__tags">
+            <span class="svcTag">Figma</span>
+            <span class="svcTag">Design Systems</span>
+            <span class="svcTag">Prototyping</span>
+            <span class="svcTag">Wireframes</span>
+            <span class="svcTag">UI Kits</span>
+          </div>
+
+          <p class="svcPanel__text">
+            Clean, modern UI systems with strong hierarchy and brand-aligned visual direction — designed to ship.
+          </p>
+
+          <div class="svcPanel__media">
+            <img src="assets/services-design.jpg" alt="UX/UI preview" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <button class="svcItem" type="button" aria-expanded="false">
+        <span class="svcItem__num">03.</span>
+        <span class="svcItem__label">UX Research</span>
+        <span class="svcItem__icon" aria-hidden="true">×</span>
+      </button>
+      <div class="svcPanel">
+        <div class="svcPanel__inner">
+          <div class="svcPanel__tags">
+            <span class="svcTag">Heuristics</span>
+            <span class="svcTag">Usability Testing</span>
+            <span class="svcTag">Audits</span>
+            <span class="svcTag">User Flows</span>
+            <span class="svcTag">Insights</span>
+          </div>
+
+          <p class="svcPanel__text">
+            Practical research to reduce friction and improve conversions — clear findings, clear next steps, fast wins.
+          </p>
+
+          <div class="svcPanel__media">
+            <img src="assets/services-research.jpg" alt="UX research preview" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <button class="svcItem" type="button" aria-expanded="false">
+        <span class="svcItem__num">04.</span>
+        <span class="svcItem__label">Branding</span>
+        <span class="svcItem__icon" aria-hidden="true">×</span>
+      </button>
+      <div class="svcPanel">
+        <div class="svcPanel__inner">
+          <div class="svcPanel__tags">
+            <span class="svcTag">Brand Identity</span>
+            <span class="svcTag">Visual Direction</span>
+            <span class="svcTag">Typography</span>
+            <span class="svcTag">Color Systems</span>
+            <span class="svcTag">Brand Guidelines</span>
+          </div>
+
+          <p class="svcPanel__text">
+            Brand foundations that make your product feel consistent and premium — visuals, direction, and guidelines that scale.
+          </p>
+
+          <div class="svcPanel__media">
+            <img src="assets/services-branding.jpg" alt="Branding preview" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+
+      <a class="services__cta" href="#projects">
+        View All Services <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
