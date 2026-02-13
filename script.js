@@ -38,3 +38,33 @@ document.querySelectorAll('.mobileMenu a').forEach(link => {
     mobileMenu.classList.remove('active');
   });
 });
+
+
+// Services accordion
+(function(){
+  const root = document.querySelector("[data-accordion]");
+  if(!root) return;
+
+  const items = Array.from(root.querySelectorAll(".svcItem"));
+  const panels = Array.from(root.querySelectorAll(".svcPanel"));
+
+  function closeAll(){
+    items.forEach(btn => {
+      btn.classList.remove("is-open");
+      btn.setAttribute("aria-expanded","false");
+    });
+    panels.forEach(p => p.classList.remove("is-open"));
+  }
+
+  items.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const isOpen = btn.classList.contains("is-open");
+      closeAll();
+      if(!isOpen){
+        btn.classList.add("is-open");
+        btn.setAttribute("aria-expanded","true");
+        panels[index].classList.add("is-open");
+      }
+    });
+  });
+})();
