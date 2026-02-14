@@ -292,7 +292,7 @@ a{color:inherit}
 .hero__photoWrap{
   position: relative;
   margin-top: 18px;
-  margin-bottom: -250px; /* IMPORTANT: stronger overlap */
+  margin-bottom: -280px; /* IMPORTANT: stronger overlap */
   display: grid;
   justify-items: center;
   z-index: 2;
