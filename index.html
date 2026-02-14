@@ -501,5 +501,19 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- Launch Video Modal -->
+<div class="videoModal" id="videoModal" aria-hidden="true">
+  <div class="videoModal__overlay" data-video-close></div>
+
+  <div class="videoModal__panel" role="dialog" aria-modal="true" aria-label="Launch video">
+    <button class="videoModal__close" type="button" data-video-close aria-label="Close">×</button>
+
+    <video class="videoModal__video" id="launchVideo" controls playsinline preload="metadata">
+      <source src="assets/trendyguru-launch.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
 </body>
 </html>
