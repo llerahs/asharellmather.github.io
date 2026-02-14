@@ -288,7 +288,7 @@ a{color:inherit}
 /* Center photo — controlled overlap (touches Services, but not too deep) */
 .hero__photoWrap{
   position: relative;
-  margin-top: -34px;
+  margin-top: -62px;
   margin-bottom: calc(var(--heroOverlap) * -1);
   display: grid;
   justify-items: center;
