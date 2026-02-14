@@ -65,7 +65,7 @@
     </div>
   </header>
 
-  <!-- HERO (Jenny-style) -->
+  <!-- HERO (Jenny-style: content sides + photo centered, white background) -->
   <main id="home" class="hero hero--light hero--jenny">
     <div class="container hero__jennyGrid">
 
@@ -96,7 +96,7 @@
         </p>
 
         <div class="hero__buttons hero__buttons--center">
-          <a class="btn btn--primary" href="#projects">Portfolio ↗</a>
+          <a class="btn btn--primary" href="assets/portfolio.pdf" target="_blank" rel="noreferrer">Portfolio ↗</a>
           <a class="btn btn--ghost btn--ghostLight" href="#contact">Hire me</a>
         </div>
 
@@ -118,31 +118,30 @@
     </div>
   </main>
 
-  <!-- SERVICES -->
+  <!-- SERVICES (accordion - dark) -->
   <section id="services" class="section section--dark services">
     <div class="container services__grid">
 
-      <!-- Left heading -->
       <div class="services__head">
         <div class="services__kicker">— My Specialization</div>
-        <h2 class="services__title"><span class="accent">Services</span> I Provide</h2>
+        <h2 class="services__title">
+          <span class="accent">Services</span> I Provide
+        </h2>
       </div>
 
-      <!-- Right description -->
       <div class="services__intro">
         <p>
           End-to-end support from strategy to design to development — with UX decisions that translate into real results.
         </p>
       </div>
 
-      <!-- Accordion -->
       <div class="services__accordion" data-accordion>
 
         <!-- 01 -->
         <button class="svcItem is-open" type="button" aria-expanded="true">
           <span class="svcItem__num">01.</span>
           <span class="svcItem__label">Web Development</span>
-          <span class="svcItem__icon" aria-hidden="true"><span class="svcArrow"></span></span>
+          <span class="svcItem__icon" aria-hidden="true"><span class="arrow"></span></span>
         </button>
         <div class="svcPanel is-open">
           <div class="svcPanel__inner">
@@ -154,12 +153,9 @@
               <span class="svcTag">REST APIs</span>
               <span class="svcTag">Accessibility</span>
             </div>
-
             <p class="svcPanel__text">
-              Responsive, performant builds with clean UI, solid structure, and conversion-focused implementation.
-              Maintainable components, fast shipping, and scalable patterns.
+              Responsive, performant builds with clean UI, strong structure, and conversion-focused implementation.
             </p>
-
             <div class="svcPanel__media">
               <img src="assets/services-dev.jpg" alt="Web development preview" onerror="this.style.display='none'">
             </div>
@@ -170,7 +166,7 @@
         <button class="svcItem" type="button" aria-expanded="false">
           <span class="svcItem__num">02.</span>
           <span class="svcItem__label">UX/UI Design</span>
-          <span class="svcItem__icon" aria-hidden="true"><span class="svcArrow"></span></span>
+          <span class="svcItem__icon" aria-hidden="true"><span class="arrow"></span></span>
         </button>
         <div class="svcPanel">
           <div class="svcPanel__inner">
@@ -181,11 +177,9 @@
               <span class="svcTag">Wireframes</span>
               <span class="svcTag">UI Kits</span>
             </div>
-
             <p class="svcPanel__text">
               Clean, modern UI systems with strong hierarchy and brand-aligned visual direction — designed to ship.
             </p>
-
             <div class="svcPanel__media">
               <img src="assets/services-design.jpg" alt="UX/UI preview" onerror="this.style.display='none'">
             </div>
@@ -196,7 +190,7 @@
         <button class="svcItem" type="button" aria-expanded="false">
           <span class="svcItem__num">03.</span>
           <span class="svcItem__label">UX Research</span>
-          <span class="svcItem__icon" aria-hidden="true"><span class="svcArrow"></span></span>
+          <span class="svcItem__icon" aria-hidden="true"><span class="arrow"></span></span>
         </button>
         <div class="svcPanel">
           <div class="svcPanel__inner">
@@ -207,11 +201,9 @@
               <span class="svcTag">User Flows</span>
               <span class="svcTag">Insights</span>
             </div>
-
             <p class="svcPanel__text">
-              Practical research to reduce friction and improve conversions — clear findings, clear next steps, fast wins.
+              Practical research to reduce friction and improve conversions — clear findings, clear next steps.
             </p>
-
             <div class="svcPanel__media">
               <img src="assets/services-research.jpg" alt="UX research preview" onerror="this.style.display='none'">
             </div>
@@ -222,7 +214,7 @@
         <button class="svcItem" type="button" aria-expanded="false">
           <span class="svcItem__num">04.</span>
           <span class="svcItem__label">Branding</span>
-          <span class="svcItem__icon" aria-hidden="true"><span class="svcArrow"></span></span>
+          <span class="svcItem__icon" aria-hidden="true"><span class="arrow"></span></span>
         </button>
         <div class="svcPanel">
           <div class="svcPanel__inner">
@@ -231,26 +223,199 @@
               <span class="svcTag">Visual Direction</span>
               <span class="svcTag">Typography</span>
               <span class="svcTag">Color Systems</span>
-              <span class="svcTag">Brand Guidelines</span>
+              <span class="svcTag">Guidelines</span>
             </div>
-
             <p class="svcPanel__text">
-              Brand foundations that make your product feel consistent and premium — visuals, direction, and guidelines that scale.
+              Brand foundations that make your product feel consistent and premium — visuals, direction, and scalable assets.
             </p>
-
             <div class="svcPanel__media">
               <img src="assets/services-branding.jpg" alt="Branding preview" onerror="this.style.display='none'">
             </div>
           </div>
         </div>
 
-        <!-- CTA (matches reference style) -->
-        <a class="services__cta" href="#projects">
+        <a class="services__cta" href="assets/portfolio.pdf" target="_blank" rel="noreferrer">
           <span class="services__cta-pill">View All Services</span>
-          <span class="services__cta-circle" aria-hidden="true">
-            <span class="services__cta-arrow"></span>
-          </span>
+          <span class="services__cta-circle"><span class="services__cta-arrow"></span></span>
         </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS (light/white section) -->
+  <section id="skills" class="section section--light skills">
+    <div class="container">
+
+      <div class="skills__head">
+        <div class="skills__kicker">— My Toolkit</div>
+        <h2 class="skills__title">
+          Design & Dev Tools <span class="accent">I Use</span>
+        </h2>
+      </div>
+
+      <div class="skills__grid">
+        <div class="skillCard">
+          <img src="assets/figma.png" alt="Figma">
+          <div class="skillCard__percent">98%</div>
+          <div class="skillCard__name">Figma</div>
+        </div>
+
+        <div class="skillCard">
+          <img src="assets/xd.png" alt="Adobe XD">
+          <div class="skillCard__percent">94%</div>
+          <div class="skillCard__name">Adobe XD</div>
+        </div>
+
+        <div class="skillCard">
+          <img src="assets/photoshop.png" alt="Photoshop">
+          <div class="skillCard__percent">92%</div>
+          <div class="skillCard__name">Photoshop</div>
+        </div>
+
+        <div class="skillCard">
+          <img src="assets/wordpress.png" alt="WordPress">
+          <div class="skillCard__percent">96%</div>
+          <div class="skillCard__name">WordPress</div>
+        </div>
+
+        <div class="skillCard">
+          <img src="assets/react.png" alt="React">
+          <div class="skillCard__percent">90%</div>
+          <div class="skillCard__name">React</div>
+        </div>
+
+        <div class="skillCard">
+          <img src="assets/javascript.png" alt="JavaScript">
+          <div class="skillCard__percent">95%</div>
+          <div class="skillCard__name">JavaScript</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS (dark, 2 cards) -->
+  <section id="projects" class="section section--dark featured">
+    <div class="container">
+
+      <div class="section__head">
+        <h2 class="section__title">
+          Featured <span class="accent">Projects</span>
+        </h2>
+        <a href="assets/portfolio.pdf" class="btn btn--primary" target="_blank" rel="noreferrer">
+          View Portfolio ↗
+        </a>
+      </div>
+
+      <div class="featured__grid">
+
+        <!-- PROJECT 1 — STEMlingo -->
+        <article class="featuredCard">
+          <div class="featuredCard__image">
+            <img src="assets/stemlingo.jpg" alt="STEMlingo website preview" onerror="this.style.display='none'">
+          </div>
+
+          <div class="featuredCard__body">
+            <div class="featuredCard__tags">
+              <span>UX/UI Design</span>
+              <span>Web Design</span>
+              <span>Web Development</span>
+            </div>
+
+            <h3>STEMlingo</h3>
+            <p class="featuredCard__subtitle">
+              Website redesign, development, & subscription flow optimization.
+            </p>
+
+            <div class="featuredCard__details">
+              <div>
+                <strong>Role</strong>
+                <p>Lead Web Designer • Web Developer • UX Designer</p>
+              </div>
+
+              <div>
+                <strong>Tech Stack</strong>
+                <p>Shopify • Liquid • HTML • CSS • JavaScript • Figma</p>
+              </div>
+
+              <div>
+                <strong>What I improved</strong>
+                <p>Clearer value in first seconds, simplified navigation, and a more intuitive subscription decision flow.</p>
+              </div>
+
+              <div>
+                <strong>Outcome</strong>
+                <p>A modern, trust-building UI with structured content patterns and scalable custom sections.</p>
+              </div>
+            </div>
+
+            <div class="featuredCard__actions">
+              <a href="assets/portfolio.pdf" class="featuredCard__cta" target="_blank" rel="noreferrer">View Case Study →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 — TrendyGuru + Launch Video -->
+        <article class="featuredCard">
+          <div class="featuredCard__image">
+            <img src="assets/trendyguru.jpg" alt="TrendyGuru website preview" onerror="this.style.display='none'">
+          </div>
+
+          <div class="featuredCard__body">
+            <div class="featuredCard__tags">
+              <span>UX/UI Design</span>
+              <span>Web Design</span>
+              <span>Web Development</span>
+              <span>Branding</span>
+            </div>
+
+            <h3>TrendyGuru.online</h3>
+            <p class="featuredCard__subtitle">
+              WordPress website design + development with branding and launch assets.
+            </p>
+
+            <div class="featuredCard__details">
+              <div>
+                <strong>Role</strong>
+                <p>UX/UI Designer • Web Designer • Web Developer • Brand Designer</p>
+              </div>
+
+              <div>
+                <strong>Tech Stack</strong>
+                <p>WordPress • Elementor • CSS • JavaScript • Branding</p>
+              </div>
+
+              <div>
+                <strong>What I improved</strong>
+                <p>
+                  Full visual identity, created the logo, designed and built the website, and produced the 10-second launch video.
+                </p>
+              </div>
+
+              <div>
+                <strong>Outcome</strong>
+                <p>
+                  A cohesive brand presence with strong hierarchy, scalable WordPress sections, and a polished launch-ready look.
+                </p>
+              </div>
+            </div>
+
+            <div class="featuredCard__actions">
+              <a href="assets/portfolio.pdf" class="featuredCard__cta" target="_blank" rel="noreferrer">View Case Study →</a>
+
+              <!-- Video CTA opens modal -->
+              <button
+                class="featuredCard__cta featuredCard__cta--video"
+                type="button"
+                data-video-src="assets/video/trendyguru-launch.mp4"
+                aria-label="Watch TrendyGuru launch video">
+                Watch Launch Video ▶
+              </button>
+            </div>
+
+          </div>
+        </article>
 
       </div>
     </div>
@@ -262,7 +427,7 @@
       <div class="about__media">
         <div class="portrait portrait--left">
           <div class="portrait__circle portrait__circle--left" aria-hidden="true"></div>
-          <img src="assets/ about.png" alt="A. Sharell Mather" class="portrait__img" />
+          <img src="assets/about.png" alt="A. Sharell Mather" class="portrait__img" />
         </div>
       </div>
 
@@ -291,55 +456,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section section--soft">
-    <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">Featured <span class="accent">Project</span></h2>
-        <p class="section__desc">Here’s one highlighted case with the details that matter to clients and recruiters.</p>
-      </div>
-
-      <article class="project">
-        <div class="project__media">
-          <img src="assets/stemlingo.jpg" alt="STEMlingo website preview" onerror="this.style.display='none'" />
-        </div>
-
-        <div class="project__content">
-          <h3 class="project__title">STEMlingo</h3>
-          <p class="project__meta">Website redesign, development, & subscription flow optimization</p>
-
-          <div class="project__grid">
-            <div>
-              <div class="project__label">Role</div>
-              <div class="project__value">Lead Web Designer • Web Developer • UX Designer</div>
-            </div>
-            <div>
-              <div class="project__label">Tech Stack</div>
-              <div class="project__value">Shopify • Liquid • HTML • CSS • JavaScript • Figma</div>
-            </div>
-            <div>
-              <div class="project__label">What I improved</div>
-              <div class="project__value">
-                Clearer value in first seconds, simplified navigation, and a more intuitive subscription decision flow.
-              </div>
-            </div>
-            <div>
-              <div class="project__label">Outcome</div>
-              <div class="project__value">
-                A modern, trust-building UI with structured content patterns and scalable custom sections.
-              </div>
-            </div>
-          </div>
-
-          <div class="project__actions">
-            <a class="btn btn--primary" href="https://stemlingo.com" target="_blank" rel="noreferrer">View Live ↗</a>
-            <a class="btn btn--ghost" href="assets/portfolio.pdf" target="_blank" rel="noreferrer">Open Portfolio PDF</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <!-- FOOTER / CONTACT -->
   <footer id="contact" class="footer">
     <div class="container footer__grid">
@@ -365,6 +481,24 @@
       © <span id="year"></span> A. Sharell Mather
     </div>
   </footer>
+
+  <!-- VIDEO MODAL -->
+  <div class="videoModal" id="videoModal" aria-hidden="true">
+    <div class="videoModal__overlay" data-close></div>
+
+    <div class="videoModal__panel" role="dialog" aria-modal="true" aria-label="Launch video">
+      <button class="videoModal__close" type="button" data-close aria-label="Close video">×</button>
+
+      <video
+        id="videoPlayer"
+        class="videoModal__video"
+        controls
+        playsinline
+        preload="metadata">
+        <source src="" type="video/mp4" />
+      </video>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
