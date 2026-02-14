@@ -46,7 +46,6 @@ a{color:inherit}
   pointer-events:none !important;
   z-index:9998;
 
-  /* BORDER ONLY */
   border:3px solid transparent;
   background: linear-gradient(90deg,#6ef 0%, #7a5cff 35%, #ff8a2a 70%, #7aff7a 100%) border-box;
   -webkit-mask:
@@ -58,30 +57,21 @@ a{color:inherit}
   opacity:.95;
 }
 
-/* =========================
-   HEADER FIXES (white area above nav)
-   ========================= */
-
-/* Header area behind nav should be LIGHT so it doesn't look black */
+/* Header area behind nav should be LIGHT */
 .top{
   position:sticky;
   top:0;
   z-index:50;
   background: var(--light);
-
-  /* creates the white strip above the pill nav (prevents dark body bg showing) */
-  padding-top: 18px;
-  padding-bottom: 12px;
+  padding-top: 0; /* ensures no dark strip above */
 }
 
 /* NAV (black pill + centered logo) */
 .nav{
   position:relative;
   z-index:2;
-
-  /* IMPORTANT: remove top margin so nothing dark peeks above header */
   margin:0 auto;
-
+  margin-top: 18px;
   padding:12px 14px;
   border-radius:999px;
   background: rgba(10,10,12,.92);
@@ -124,11 +114,11 @@ a{color:inherit}
 .nav__logo{
   height: 48px;
   width: auto;
-  max-width: 200px;
+  max-width: 240px;
   object-fit: contain;
 }
 @media (min-width: 900px){
-  .nav__logo{ height: 56px; max-width: 240px; }
+  .nav__logo{ height: 56px; max-width: 280px; }
 }
 
 .nav__links{
@@ -159,38 +149,34 @@ a{color:inherit}
   font-weight:750;
 }
 
+.accent{color:var(--orange)}
+
 /* HERO BASE */
 .hero{
   position:relative;
   z-index:1;
-  padding:64px 0 24px;
 }
 
-/* Jenny style hero: side content + center photo */
+/* Jenny style hero */
 .hero--light{
   background: var(--light);
   color: var(--darkText);
-  padding: 70px 0 40px;
 }
 
+/* Reduce bottom padding so the image can “touch” Services */
 .hero--jenny{
   padding-top: 44px;
+  padding-bottom: 0; /* IMPORTANT */
   background: var(--light);
   color: var(--darkText);
-
-  /* IMPORTANT: remove extra space under hero so image can meet services */
-  padding-bottom: 0;
 }
 
 .hero__jennyGrid{
   display: grid;
   grid-template-columns: 1fr 1.6fr 1fr;
   gap: 26px;
-  align-items: center;
-  padding: 36px 0 18px;
-
-  /* IMPORTANT: remove extra grid bottom space */
-  padding-bottom: 0;
+  align-items: start;
+  padding: 18px 0 0; /* IMPORTANT: less vertical space */
 }
 
 .hero__center{
@@ -204,30 +190,26 @@ a{color:inherit}
 }
 
 .hero__title{
-  margin:18px 0 10px;
+  margin:0 0 12px;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height:1.05;
   letter-spacing:-.02em;
+  color: var(--darkText);
 }
-.hero__title--light{color: var(--darkText)}
-.hero__title--center{margin:0 0 12px}
+.hero__subtitle{font-weight:850; color: var(--darkText);}
 
-.hero__subtitle{font-weight:850}
-.hero__subtitle--light{color: var(--darkText)}
-
-.accent{color:var(--orange)}
-
-.hero__desc{color:var(--muted); max-width:60ch}
-.hero__desc--light{color: var(--darkMuted)}
-.hero__desc--center{margin:0; max-width:62ch}
+.hero__desc{
+  margin:0;
+  color: var(--darkMuted);
+  max-width:62ch
+}
 
 .hero__buttons{
-  display:flex; gap:12px; flex-wrap:wrap;
-  margin-top:18px;
-}
-.hero__buttons--center{
-  justify-content: center;
-  margin-top: 16px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top: 14px;
+  justify-content:center;
 }
 
 .pill{
@@ -236,11 +218,6 @@ a{color:inherit}
   gap:10px;
   padding:10px 14px;
   border-radius:999px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.05);
-  color:var(--muted);
-}
-.pill--light{
   border: 1px solid rgba(0,0,0,.12);
   background: rgba(255,255,255,.85);
   color: var(--darkMuted);
@@ -282,76 +259,64 @@ a{color:inherit}
 /* Side cards */
 .hero__side{
   display: grid;
-  align-items: center;
+  align-items: start;
+  padding-top: 118px; /* aligns with center headline like inspiration */
 }
 .hero__side--left{justify-items: start;}
 .hero__side--right{justify-items: end;}
-
 .hero__sideCard{max-width: 320px;}
 
 .quote{
   max-width: 42ch;
   padding:14px 16px;
   border-radius:18px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.05);
-}
-.quote--light{
   border:1px solid rgba(20,20,24,.14);
   background: rgba(255,255,255,.92);
 }
 .quote__mark{font-size:28px; color:var(--orange); line-height:1}
-.quote__text{margin:6px 0 0; color:var(--muted); font-size:.98rem}
-.quote--light .quote__text{color: var(--darkMuted)}
+.quote__text{margin:6px 0 0; color: var(--darkMuted); font-size:.98rem}
 
 .xp{
   padding:14px 16px;
   border-radius:18px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.05);
+  border:1px solid rgba(20,20,24,.14);
+  background: rgba(255,255,255,.92);
   text-align:center;
   min-width: 160px;
 }
-.xp--light{
-  border:1px solid rgba(20,20,24,.14);
-  background: rgba(255,255,255,.92);
-}
 .xp__stars{color:var(--orange); letter-spacing:2px}
 .xp__num{font-size:1.35rem; font-weight:900; margin-top:4px}
-.xp__label{color:var(--muted2); font-size:.9rem}
-.xp--light .xp__label{color: var(--darkMuted2)}
+.xp__label{color: var(--darkMuted2); font-size:.9rem}
 
-/* Center photo */
+/* Center photo – pull DOWN into services so it “touches” */
 .hero__photoWrap{
   position: relative;
-  margin-top: 28px;
+  margin-top: 18px;
+  margin-bottom: -88px; /* IMPORTANT: overlaps into the black section */
   display: grid;
   justify-items: center;
-
-  /* IMPORTANT: pull image down so it meets the black services section */
-  margin-bottom: -40px; /* tweak: -30 to -70 based on taste */
+  z-index: 2;
 }
-
 .hero__photoCircle{
   position: absolute;
   width: 360px;
   height: 360px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, rgba(255,138,42,.95), rgba(255,179,107,.55) 58%, rgba(255,255,255,0) 74%);
-  transform: translateY(30px);
+  transform: translateY(26px);
   z-index: 0;
 }
-
 .hero__photo{
   position: relative;
   z-index: 1;
   width: 320px;
   height: auto;
   object-fit: cover;
+  display:block;
   filter: drop-shadow(0 28px 70px rgba(0,0,0,.22));
 }
 
-/* Your existing sections */
+/* Sections */
 .section{position:relative; z-index:1; padding:58px 0}
 .section__head{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap}
 .section__title{margin:0; font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing:-.01em}
@@ -363,6 +328,7 @@ a{color:inherit}
   border-top:1px solid rgba(255,255,255,.06);
   border-bottom:1px solid rgba(255,255,255,.06);
 }
+
 .section--soft{
   background:
     radial-gradient(900px 500px at 20% 0%, rgba(255,138,42,.10), transparent 60%),
@@ -374,6 +340,11 @@ a{color:inherit}
 /* =========================
    SERVICES (Accordion layout — DARK)
    ========================= */
+
+.services{
+  /* creates breathing room ABOVE the accordion because hero image overlaps into it */
+  padding-top: 110px; /* IMPORTANT */
+}
 
 .services__grid{
   display:grid;
@@ -408,12 +379,6 @@ a{color:inherit}
   display:flex;
   flex-direction:column;
   gap: 14px;
-}
-
-/* IMPORTANT: since hero overlaps services, give top padding so content doesn't clash */
-.section.section--dark.services{
-  margin-top: 0;
-  padding-top: 80px; /* tweak if you change overlap amount */
 }
 
 /* Accordion row */
@@ -451,17 +416,25 @@ a{color:inherit}
   color: rgba(255,255,255,.92);
 }
 
+/* RIGHT ICON CIRCLE */
 .svcItem__icon{
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
   display:grid;
   place-items:center;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
-  font-size: 18px;
-  line-height: 1;
-  color: rgba(255,255,255,.75);
+}
+
+/* ARROW (matches inspiration: angled arrow, not X) */
+.svcArrow{
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid rgba(255,255,255,.85);
+  border-bottom: 2px solid rgba(255,255,255,.85);
+  transform: rotate(-45deg);
+  transition: transform .18s ease, border-color .18s ease;
 }
 
 /* Open row */
@@ -472,8 +445,12 @@ a{color:inherit}
 
 .svcItem.is-open .svcItem__icon{
   background: linear-gradient(180deg, var(--orange), var(--orange2));
-  color: #151014;
   border-color: transparent;
+}
+
+.svcItem.is-open .svcArrow{
+  border-color: rgba(15,15,18,.92);
+  transform: rotate(135deg); /* points up when open */
 }
 
 /* Expanded panel */
@@ -533,18 +510,48 @@ a{color:inherit}
   opacity: .92;
 }
 
-/* CTA */
+/* CTA – matches inspiration: black pill, orange pill, white circle, arrow */
 .services__cta{
-  align-self:center;
-  margin-top: 6px;
+  margin: 18px auto 0;
   width: fit-content;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
   text-decoration:none;
-  font-weight: 850;
-  padding: 12px 16px;
+  background: rgba(0,0,0,.80);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 16px 46px rgba(0,0,0,.40);
+}
+
+.services__cta-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 18px;
   border-radius: 999px;
   background: linear-gradient(180deg, var(--orange), var(--orange2));
   color: #151014;
-  box-shadow: 0 18px 46px rgba(0,0,0,.35);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.services__cta-circle{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--white);
+  display:grid;
+  place-items:center;
+}
+
+.services__cta-arrow{
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid #151014;
+  border-bottom: 2px solid #151014;
+  transform: rotate(-45deg);
 }
 
 /* Responsive */
@@ -573,7 +580,7 @@ a{color:inherit}
 .about__actions{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
 @media (max-width: 980px){ .about__actions{justify-content:center} }
 
-/* About portrait (keep your original style) */
+/* About portrait */
 .portrait{
   position:relative;
   display:grid;
@@ -750,8 +757,8 @@ a{color:inherit}
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .hero__side--left,
-  .hero__side--right{
+  .hero__side{
+    padding-top: 0;
     justify-items: center;
   }
   .hero__sideCard{
@@ -763,5 +770,11 @@ a{color:inherit}
   }
   .hero__photo{
     width: 290px;
+  }
+  .hero__photoWrap{
+    margin-bottom: -54px;
+  }
+  .services{
+    padding-top: 80px;
   }
 }
