@@ -286,22 +286,24 @@ a{color:inherit}
 .xp__label{color: var(--darkMuted2); font-size:.9rem}
 
 /* Center photo — controlled overlap (touches Services, but not too deep) */
+/* keep the wrap in normal flow so it doesn't crash into CTA */
 .hero__photoWrap{
   position: relative;
-  margin-top: -62px;
-  margin-bottom: calc(var(--heroOverlap) * -1);
+  margin-top: 18px;                 /* normal */
+  margin-bottom: -110px;            /* controls overlap into Services */
   display: grid;
   justify-items: center;
   z-index: 2;
 }
 
+/* move ONLY the circle + photo upward inside the wrap */
 .hero__photoCircle{
   position: absolute;
   width: 360px;
   height: 360px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, rgba(255,138,42,.95), rgba(255,179,107,.55) 58%, rgba(255,255,255,0) 74%);
-  transform: translateY(26px);
+  transform: translateY(-18px);     /* <-- pulls circle up without affecting layout above */
   z-index: 0;
 }
 
@@ -313,6 +315,7 @@ a{color:inherit}
   object-fit: cover;
   display:block;
   filter: drop-shadow(0 28px 70px rgba(0,0,0,.22));
+  transform: translateY(-18px);     /* <-- pulls photo up without affecting CTA/text */
 }
 
 /* Sections */
