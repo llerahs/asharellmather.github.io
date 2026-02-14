@@ -96,10 +96,17 @@ a{color:inherit;text-decoration:none}
 
 /* ✅ LOGO MUST BE 66x66 */
 .nav__logo{
-  width:66px;
-  height:66px;
-  object-fit:contain;
-  display:block;
+  height: 48px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+@media (min-width: 900px){
+  .nav__logo{ 
+    height: 56px; 
+    max-width: 240px; 
+  }
 }
 
 /* Links */
@@ -473,4 +480,293 @@ a{color:inherit;text-decoration:none}
   .skills__grid{grid-template-columns:repeat(2,1fr)}
   .nav__logo{width:56px;height:56px;} /* scale slightly for tiny screens */
   .featuredCard__image{padding:12px;}
+}
+
+/* ============================= */
+/* ABOUT (RESTORE) */
+/* ============================= */
+
+.about{
+  display:grid;
+  gap:22px;
+  grid-template-columns: .9fr 1.1fr;
+  align-items:center;
+}
+
+@media (max-width: 980px){
+  .about{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+
+.about__bullets{
+  margin-top:16px;
+  display:grid;
+  gap:10px;
+}
+
+.bullet{
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.05);
+  color: var(--muted);
+}
+
+.about__actions{
+  margin-top:18px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+@media (max-width: 980px){
+  .about__actions{justify-content:center}
+}
+
+/* Portrait block (restores image + circle) */
+.portrait{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height: 420px;
+}
+
+@media (max-width:900px){
+  .portrait{min-height: 360px}
+}
+
+.portrait__circle{
+  position:absolute;
+  width: 360px;
+  height: 360px;
+  border-radius:999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,138,42,.95), rgba(255,138,42,.25) 55%, transparent 70%);
+  filter: blur(.2px);
+  transform: translateY(24px);
+  z-index:0;
+}
+
+.portrait__circle--left{
+  background: radial-gradient(circle at 30% 30%, rgba(255,138,42,.75), rgba(255,138,42,.20) 55%, transparent 70%);
+  transform: translate(-12px, 18px);
+}
+
+.portrait__img{
+  position:relative;
+  z-index:1;
+  width:min(360px, 82%);
+  height:auto;
+  object-fit:cover;
+  border-radius: 26px;
+  filter: drop-shadow(0 24px 60px rgba(0,0,0,.35));
+}
+
+
+/* ============================= */
+/* FOOTER (RESTORE) */
+/* ============================= */
+
+.footer{
+  position:relative;
+  z-index:1;
+  padding:44px 0 18px;
+}
+
+.footer__grid{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr .7fr;
+  gap:16px;
+  align-items:start;
+}
+
+@media (max-width: 980px){
+  .footer__grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+
+.footer__name{
+  font-weight:900;
+  font-size:1.1rem;
+}
+
+.footer__role{
+  color:var(--muted);
+}
+
+.footer__label{
+  color:var(--muted2);
+  margin-right:10px;
+}
+
+.footer__contact a{
+  color:var(--orange);
+  text-decoration:none;
+}
+
+.footer__contact a:hover{
+  text-decoration:underline;
+}
+
+.footer__links{
+  display:grid;
+  gap:8px;
+}
+
+.footer__links a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer__links a:hover{
+  color:var(--text);
+  text-decoration:underline;
+}
+
+.footer__bottom{
+  margin-top:18px;
+  padding-top:14px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  color:var(--muted2);
+  text-align:center;
+}
+
+
+/* ============================= */
+/* MOBILE MENU (RESTORE / PREVENT DOUBLE NAV) */
+/* ============================= */
+
+/* Desktop default */
+.mobileMenu{ display:none; }
+
+/* Only show on mobile when active */
+@media (max-width: 768px){
+  .mobileMenu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.95);
+    backdrop-filter:blur(10px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:24px;
+    transition:right 0.3s ease;
+    z-index:10000;
+  }
+  .mobileMenu.active{ right:0; }
+
+  .mobileMenu a{
+    color:#fff;
+    font-size:1.4rem;
+    text-decoration:none;
+  }
+}
+
+/* =========================================================
+   PATCH ONLY — DO NOT DELETE YOUR EXISTING CSS
+   Fix: logo size (66x66), featured project thumbs (513x513),
+   and keep everything else intact
+   ========================================================= */
+
+/* --- Logo must be 66x66 and not shrink --- */
+.nav__logo{
+  width:66px !important;
+  height:66px !important;
+  max-width:none !important;
+  object-fit:contain !important;
+}
+
+/* In case something is forcing the center brand to compress */
+.nav__brand--center{
+  flex: 0 0 auto !important;
+}
+
+/* --- Featured Projects image sizing (513x513, responsive) --- */
+/* This targets ONLY images inside your featured project cards */
+.featured__grid .featuredCard__image img,
+.featured__grid .projectCard__image img,
+.featured__grid .featuredCard img,
+.featured__grid img.featuredThumb{
+  width: min(513px, 100%) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  object-fit: cover !important;
+  display:block !important;
+}
+
+/* Keep the image area centered and padded */
+.featured__grid .featuredCard__image,
+.featured__grid .projectCard__image{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding: 14px !important;
+}
+
+/* --- Make sure mobile menu does NOT show on desktop (prevents “double nav”) --- */
+.mobileMenu{
+  display:none; /* default */
+}
+@media (max-width: 768px){
+  .mobileMenu{ display:flex; } /* only show on mobile when you toggle it */
+}
+
+/* If you had any stray nav list showing under the header, kill it */
+header.top .container > ul,
+header.top .container > ol{
+  display:none !important;
+}
+
+/* --- Video modal styling (only affects the modal) --- */
+.videoModal{
+  position:fixed;
+  inset:0;
+  display:none;
+  z-index:20000;
+}
+.videoModal.is-open{ display:block; }
+
+.videoModal__overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.72);
+}
+
+.videoModal__panel{
+  position:relative;
+  width:min(900px, 92vw);
+  margin:8vh auto;
+  background:#0f0f12;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow: 0 22px 70px rgba(0,0,0,.55);
+}
+
+.videoModal__close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  z-index:2;
+}
+
+.videoModal__video{
+  width:100%;
+  height:auto;
+  display:block;
 }
