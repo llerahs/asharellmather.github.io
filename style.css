@@ -176,7 +176,7 @@ a{color:inherit}
   grid-template-columns: 1fr 1.6fr 1fr;
   gap: 26px;
   align-items: start;
-  padding: 18px 0 0; /* IMPORTANT: less vertical space */
+  padding: 18px 0 0; /* bottom = 0 */
 }
 
 .hero__center{
@@ -292,7 +292,7 @@ a{color:inherit}
 .hero__photoWrap{
   position: relative;
   margin-top: 18px;
-  margin-bottom: -88px; /* IMPORTANT: overlaps into the black section */
+  margin-bottom: -140px; /* IMPORTANT: stronger overlap */
   display: grid;
   justify-items: center;
   z-index: 2;
