@@ -165,7 +165,8 @@ a{color:inherit}
 .hero--jenny{
   background: var(--light);
   color: var(--darkText);
-  padding-top: 28px;
+  padding-top: 44px;
+  padding-bottom: 0;
   padding-bottom: 0; /* we control bottom via overlap */
 }
 
@@ -174,7 +175,7 @@ a{color:inherit}
   grid-template-columns: 1fr 1.6fr 1fr;
   gap: 26px;
   align-items: start;
-  padding: 22px 0 0;
+  padding: 18px 0 0;
   min-height: 620px; /* <-- stops “hero too small” */
 }
 
@@ -289,8 +290,8 @@ a{color:inherit}
 /* keep the wrap in normal flow so it doesn't crash into CTA */
 .hero__photoWrap{
   position: relative;
-  margin-top: 18px;                 /* normal */
-  margin-bottom: -110px;            /* controls overlap into Services */
+  margin-top: 44px;                 /* normal */
+  margin-bottom: -210px;            /* controls overlap into Services */
   display: grid;
   justify-items: center;
   z-index: 2;
@@ -303,7 +304,7 @@ a{color:inherit}
   height: 360px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, rgba(255,138,42,.95), rgba(255,179,107,.55) 58%, rgba(255,255,255,0) 74%);
-  transform: translateY(-18px);     /* <-- pulls circle up without affecting layout above */
+  transform: translateY(26px);     /* <-- pulls circle up without affecting layout above */
   z-index: 0;
 }
 
@@ -315,7 +316,7 @@ a{color:inherit}
   object-fit: cover;
   display:block;
   filter: drop-shadow(0 28px 70px rgba(0,0,0,.22));
-  transform: translateY(-18px);     /* <-- pulls photo up without affecting CTA/text */
+  transform: translateY(0);     /* <-- pulls photo up without affecting CTA/text */
 }
 
 /* Sections */
@@ -339,7 +340,7 @@ a{color:inherit}
 
 /* SERVICES */
 .services{
-  padding-top: calc(58px + var(--heroOverlap)); /* makes room for overlap cleanly */
+  padding-top: 170px; /* makes room for overlap cleanly */
 }
 
 .services__grid{
