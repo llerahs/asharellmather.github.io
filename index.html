@@ -138,15 +138,15 @@
 
       <!-- Accordion -->
       <div class="services__accordion" data-accordion>
+
         <!-- 01 -->
         <button class="svcItem is-open" type="button" aria-expanded="true">
           <span class="svcItem__num">01.</span>
           <span class="svcItem__label">Web Development</span>
           <span class="svcItem__icon" aria-hidden="true">
-            <span class="arrow"></span>
+            <span class="svcArrow"></span>
           </span>
         </button>
-
         <div class="svcPanel is-open">
           <div class="svcPanel__inner">
             <div class="svcPanel__tags">
@@ -169,15 +169,14 @@
           </div>
         </div>
 
-        <!-- 02 (FIXED) -->
+        <!-- 02 -->
         <button class="svcItem" type="button" aria-expanded="false">
           <span class="svcItem__num">02.</span>
           <span class="svcItem__label">UX/UI Design</span>
           <span class="svcItem__icon" aria-hidden="true">
-            <span class="arrow"></span>
+            <span class="svcArrow"></span>
           </span>
         </button>
-
         <div class="svcPanel">
           <div class="svcPanel__inner">
             <div class="svcPanel__tags">
@@ -198,15 +197,14 @@
           </div>
         </div>
 
-        <!-- 03 (FIXED) -->
+        <!-- 03 -->
         <button class="svcItem" type="button" aria-expanded="false">
           <span class="svcItem__num">03.</span>
           <span class="svcItem__label">UX Research</span>
           <span class="svcItem__icon" aria-hidden="true">
-            <span class="arrow"></span>
+            <span class="svcArrow"></span>
           </span>
         </button>
-
         <div class="svcPanel">
           <div class="svcPanel__inner">
             <div class="svcPanel__tags">
@@ -227,15 +225,14 @@
           </div>
         </div>
 
-        <!-- 04 (FIXED) -->
+        <!-- 04 -->
         <button class="svcItem" type="button" aria-expanded="false">
           <span class="svcItem__num">04.</span>
           <span class="svcItem__label">Branding</span>
           <span class="svcItem__icon" aria-hidden="true">
-            <span class="arrow"></span>
+            <span class="svcArrow"></span>
           </span>
         </button>
-
         <div class="svcPanel">
           <div class="svcPanel__inner">
             <div class="svcPanel__tags">
@@ -256,12 +253,14 @@
           </div>
         </div>
 
-        <a class="services__cta" href="#projects">
-          <span class="services__cta-text">View All Services</span>
-          <span class="services__cta-circle">
+        <!-- View all services CTA -->
+        <a class="services__cta" href="#projects" aria-label="View all services">
+          <span class="services__cta-pill">View All Services</span>
+          <span class="services__cta-circle" aria-hidden="true">
             <span class="services__cta-arrow"></span>
           </span>
         </a>
+
       </div>
     </div>
   </section>
@@ -272,6 +271,7 @@
       <div class="about__media">
         <div class="portrait portrait--left">
           <div class="portrait__circle portrait__circle--left" aria-hidden="true"></div>
+          <!-- IMPORTANT: removed the space in the filename -->
           <img src="assets/about.png" alt="A. Sharell Mather" class="portrait__img" />
         </div>
       </div>
