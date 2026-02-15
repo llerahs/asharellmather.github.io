@@ -191,19 +191,6 @@ a{color:inherit;text-decoration:none}
   flex: 0 0 10px !important;
 }
 
-/* 3) If you DO have a dot span, force it visible too */
-.hero__hello .pill__dot,
-.hello .pill__dot,
-.hero__pill .pill__dot,
-.hero .pill .pill__dot{
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 999px !important;
-  background: var(--orange) !important;
-  box-shadow: 0 0 18px rgba(255,138,42,.8) !important;
-  display: inline-block !important;
-}
-
 /* Title / subtitle */
 .hero__title{
   margin: 0 0 12px;
