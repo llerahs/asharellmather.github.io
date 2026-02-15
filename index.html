@@ -405,13 +405,11 @@
               <a href="assets/portfolio.pdf" class="featuredCard__cta" target="_blank" rel="noreferrer">View Case Study →</a>
 
               <!-- Video CTA opens modal -->
-              <button
-                class="featuredCard__cta featuredCard__cta--video"
-                type="button"
-                data-video-src="assets/video/trendyguru-launch.mp4"
+              <button class="featuredCard__cta featuredCard__cta--video" type="button" data-youtube-id="https://youtube.com/shorts/9WElmlB80so?feature=share">
                 aria-label="Watch TrendyGuru launch video">
                 Watch Launch Video ▶
               </button>
+
             </div>
 
           </div>
@@ -482,38 +480,28 @@
     </div>
   </footer>
 
-  <!-- VIDEO MODAL -->
-  <div class="videoModal" id="videoModal" aria-hidden="true">
-    <div class="videoModal__overlay" data-close></div>
-
-    <div class="videoModal__panel" role="dialog" aria-modal="true" aria-label="Launch video">
-      <button class="videoModal__close" type="button" data-close aria-label="Close video">×</button>
-
-      <video
-        id="videoPlayer"
-        class="videoModal__video"
-        controls
-        playsinline
-        preload="metadata">
-        <source src="" type="video/mp4" />
-      </video>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-
-  <!-- Launch Video Modal -->
+ <!-- Launch Video Modal (YouTube) -->
 <div class="videoModal" id="videoModal" aria-hidden="true">
   <div class="videoModal__overlay" data-video-close></div>
 
   <div class="videoModal__panel" role="dialog" aria-modal="true" aria-label="Launch video">
     <button class="videoModal__close" type="button" data-video-close aria-label="Close">×</button>
 
-    <video class="videoModal__video" id="launchVideo" controls playsinline preload="metadata">
-      <source src="assets/trendyguru-launch.mp4" type="video/mp4" />
-    </video>
+    <div class="videoModal__iframeWrap">
+      <iframe
+        id="videoFrame"
+        class="videoModal__iframe"
+        src=""
+        title="TrendyGuru Launch Video"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
