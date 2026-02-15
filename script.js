@@ -57,68 +57,40 @@ if (accordion) {
   });
 }
 
-// ===== Video Modal
-const videoModal = $("#videoModal");
-const videoPlayer = $("#videoPlayer");
-const overlay = videoModal ? $(".videoModal__overlay", videoModal) : null;
-const closeEls = videoModal ? $$("[data-close]", videoModal) : [];
-const videoButtons = $$("[data-video-src]");
+// ===== YouTube Video Modal
+const videoModal = document.getElementById("videoModal");
+const videoFrame = document.getElementById("videoFrame");
+const closeBtns = videoModal ? [...videoModal.querySelectorAll("[data-video-close]")] : [];
+const videoButtons = [...document.querySelectorAll("[data-youtube-id]")];
 
-function openVideoModal(src) {
-  if (!videoModal || !videoPlayer) return;
+function openVideoModal(youtubeId) {
+  if (!videoModal || !videoFrame) return;
 
-  const source = videoPlayer.querySelector("source");
-  if (!source) return;
-
-  // set src + load
-  source.src = src;
-  videoPlayer.load();
+  videoFrame.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&rel=0`;
 
   videoModal.classList.add("is-open");
   videoModal.setAttribute("aria-hidden", "false");
-
-  // ✅ Best chance to autoplay: muted + playsinline
-  videoPlayer.muted = true;
-  videoPlayer.setAttribute("playsinline", "");
-  videoPlayer.currentTime = 0;
-
-  // try play after it can play
-  const tryPlay = () => {
-    videoPlayer.play().catch(() => {
-      // If blocked, user can press play (controls should be enabled in HTML)
-    });
-    videoPlayer.removeEventListener("canplay", tryPlay);
-  };
-
-  videoPlayer.addEventListener("canplay", tryPlay);
 }
 
 function closeVideoModal() {
-  if (!videoModal || !videoPlayer) return;
+  if (!videoModal || !videoFrame) return;
 
   videoModal.classList.remove("is-open");
   videoModal.setAttribute("aria-hidden", "true");
 
-  // stop and reset
-  videoPlayer.pause();
-  videoPlayer.currentTime = 0;
-
-  const source = videoPlayer.querySelector("source");
-  if (source) source.src = "";
-  videoPlayer.load();
+  // Stop video
+  videoFrame.src = "";
 }
 
 videoButtons.forEach((btn) => {
-  btn.addEventListener("click", () => openVideoModal(btn.dataset.videoSrc));
+  btn.addEventListener("click", () => openVideoModal(btn.dataset.youtubeId));
 });
 
-closeEls.forEach((el) => el.addEventListener("click", closeVideoModal));
-
-// ✅ click overlay closes modal
-if (overlay) overlay.addEventListener("click", closeVideoModal);
+closeBtns.forEach((el) => el.addEventListener("click", closeVideoModal));
 
 window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && videoModal && videoModal.classList.contains("is-open")) {
+  if (e.key === "Escape" && videoModal?.classList.contains("is-open")) {
     closeVideoModal();
   }
 });
+
