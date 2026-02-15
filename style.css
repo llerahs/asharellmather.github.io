@@ -154,24 +154,54 @@ a{color:inherit;text-decoration:none}
   justify-items: center;
 }
 
-/* ✅ If your dot element got removed from HTML, this restores it via CSS */
-.hero__hello .pill::before{
-  content:"";
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background: var(--orange);
-  box-shadow: 0 0 18px rgba(255,138,42,.8);
-  display:inline-block;
+/* =========================================================
+   HERO "HELLO" DOT — FORCE RESTORE (last in file)
+   ========================================================= */
+
+/* 1) Target the most common hello wrappers */
+.hero__hello,
+.hero .hero__hello,
+.hello,
+.hero__pill,
+.hero .pill,
+.hero .pill--hello{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(0,0,0,.12) !important;
+  background: rgba(255,255,255,.85) !important;
+  color: rgba(20,20,24,.72) !important;
 }
 
-/* if you *do* still have <span class="pill__dot"> keep it correct too */
-.pill__dot{
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:var(--orange);
-  box-shadow: 0 0 18px rgba(255,138,42,.8);
+/* 2) Inject the orange dot if your HTML doesn't have it */
+.hero__hello::before,
+.hello::before,
+.hero__pill::before,
+.hero .pill::before,
+.hero .pill--hello::before{
+  content: "" !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 999px !important;
+  background: var(--orange) !important;
+  box-shadow: 0 0 18px rgba(255,138,42,.8) !important;
+  display: inline-block !important;
+  flex: 0 0 10px !important;
+}
+
+/* 3) If you DO have a dot span, force it visible too */
+.hero__hello .pill__dot,
+.hello .pill__dot,
+.hero__pill .pill__dot,
+.hero .pill .pill__dot{
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 999px !important;
+  background: var(--orange) !important;
+  box-shadow: 0 0 18px rgba(255,138,42,.8) !important;
+  display: inline-block !important;
 }
 
 /* Title / subtitle */
