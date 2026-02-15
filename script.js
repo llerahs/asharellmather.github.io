@@ -57,40 +57,42 @@ if (accordion) {
   });
 }
 
-// ===== YouTube Video Modal
-const videoModal = document.getElementById("videoModal");
-const videoFrame = document.getElementById("videoFrame");
-const closeBtns = videoModal ? [...videoModal.querySelectorAll("[data-video-close]")] : [];
+// ===== YouTube Modal (replace your current video modal block with this)
+
+const videoModal = document.querySelector("#videoModal");
+const videoFrame = document.querySelector("#videoFrame");
+const closeEls = videoModal ? [...videoModal.querySelectorAll("[data-close],[data-video-close]")] : [];
 const videoButtons = [...document.querySelectorAll("[data-youtube-id]")];
 
-function openVideoModal(youtubeId) {
+function openYoutubeModal(videoId) {
   if (!videoModal || !videoFrame) return;
 
-  videoFrame.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&rel=0`;
+  // autoplay works more reliably if muted=1
+  const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0`;
 
+  videoFrame.src = src;
   videoModal.classList.add("is-open");
   videoModal.setAttribute("aria-hidden", "false");
 }
 
-function closeVideoModal() {
+function closeYoutubeModal() {
   if (!videoModal || !videoFrame) return;
 
   videoModal.classList.remove("is-open");
   videoModal.setAttribute("aria-hidden", "true");
 
-  // Stop video
+  // stop playback
   videoFrame.src = "";
 }
 
 videoButtons.forEach((btn) => {
-  btn.addEventListener("click", () => openVideoModal(btn.dataset.youtubeId));
+  btn.addEventListener("click", () => openYoutubeModal(btn.dataset.youtubeId));
 });
 
-closeBtns.forEach((el) => el.addEventListener("click", closeVideoModal));
+closeEls.forEach((el) => el.addEventListener("click", closeYoutubeModal));
 
 window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && videoModal?.classList.contains("is-open")) {
-    closeVideoModal();
+  if (e.key === "Escape" && videoModal && videoModal.classList.contains("is-open")) {
+    closeYoutubeModal();
   }
 });
-
