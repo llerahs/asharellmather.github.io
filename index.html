@@ -405,11 +405,11 @@
               <a href="assets/portfolio.pdf" class="featuredCard__cta" target="_blank" rel="noreferrer">View Case Study →</a>
 
               <!-- Video CTA opens modal -->
-              <button class="featuredCard__cta featuredCard__cta--video" type="button" data-youtube-id="https://www.youtube.com/embed/9WElmlB80so?autoplay=1&mute=1&playsinline=1&rel=0
-">
-                Watch Launch Video ▶
+              <button class="featuredCard__cta featuredCard__cta--video"
+                 type="button"
+                 data-youtube-id="9WElmlB80so">
+                 Watch Launch Video ▶
               </button>
-
             </div>
 
           </div>
@@ -487,18 +487,19 @@
   <div class="videoModal__panel" role="dialog" aria-modal="true" aria-label="Launch video">
     <button class="videoModal__close" type="button" data-video-close aria-label="Close">×</button>
 
-    <div class="videoModal__frame">
-  <iframe
-    id="videoFrame"
-    title="TrendyGuru Launch Video"
-    frameborder="0"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    allowfullscreen></iframe>
-</div>
+    <div class="videoModal__frameWrap">
+      <iframe
+        id="videoFrame"
+        class="videoModal__frame"
+        src=""
+        title="TrendyGuru Launch Video"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 </div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
