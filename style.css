@@ -804,13 +804,19 @@ a{color:inherit;text-decoration:none}
   z-index:2;
 }
 
-.videoModal__video,
-.videoModal__iframe {
-  width:100%;
+.videoModal__frame{
+  position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
-  display:block;
-  border:0;
+  background:#000;
 }
+.videoModal__frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
 
 /* ============================= */
 /* CURSOR DOT */
