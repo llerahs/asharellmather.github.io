@@ -57,42 +57,36 @@ if (accordion) {
   });
 }
 
-// ===== YouTube Modal (replace your current video modal block with this)
+// ===== YouTube Video Modal
+const videoModal = document.getElementById("videoModal");
+const videoFrame = document.getElementById("videoFrame");
+const closeButtons = document.querySelectorAll("[data-close]");
+const videoButtons = document.querySelectorAll("[data-video-src]");
 
-const videoModal = document.querySelector("#videoModal");
-const videoFrame = document.querySelector("#videoFrame");
-const closeEls = videoModal ? [...videoModal.querySelectorAll("[data-close],[data-video-close]")] : [];
-const videoButtons = [...document.querySelectorAll("[data-youtube-id]")];
-
-function openYoutubeModal(videoId) {
-  if (!videoModal || !videoFrame) return;
-
-  // autoplay works more reliably if muted=1
-  const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0`;
-
-  videoFrame.src = src;
+function openVideoModal(src) {
+  videoFrame.src = src + "?autoplay=1";
   videoModal.classList.add("is-open");
   videoModal.setAttribute("aria-hidden", "false");
 }
 
-function closeYoutubeModal() {
-  if (!videoModal || !videoFrame) return;
-
+function closeVideoModal() {
   videoModal.classList.remove("is-open");
   videoModal.setAttribute("aria-hidden", "true");
-
-  // stop playback
   videoFrame.src = "";
 }
 
-videoButtons.forEach((btn) => {
-  btn.addEventListener("click", () => openYoutubeModal(btn.dataset.youtubeId));
+videoButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    openVideoModal(btn.dataset.videoSrc);
+  });
 });
 
-closeEls.forEach((el) => el.addEventListener("click", closeYoutubeModal));
+closeButtons.forEach(btn => {
+  btn.addEventListener("click", closeVideoModal);
+});
 
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && videoModal && videoModal.classList.contains("is-open")) {
-    closeYoutubeModal();
+window.addEventListener("keydown", e => {
+  if (e.key === "Escape" && videoModal.classList.contains("is-open")) {
+    closeVideoModal();
   }
 });
